@@ -19,7 +19,7 @@ for (const player of players) {
             listBody.appendChild(li);
         }
         else{
-            alert("error");
+            alert("You cant choice more then 5 players");
         }
     })
 }

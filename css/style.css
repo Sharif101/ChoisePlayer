@@ -19,7 +19,8 @@ body{
 .banner-part h1{
     color: #FF5E19;
     font-weight: 700;
-    font-size: 46px;
+    font-size: 100px;
+    font-family: 'Italianno', cursive;;
 }
 .banner-part p{
     width: 48%;
@@ -122,4 +123,25 @@ h2::after{
     background-image: url(../images/shape.png ) ;
     background-repeat: no-repeat;
     content: "";
+}
+
+
+@media screen and (max-width:576px) {
+    .banner-part h1 {
+        font-size: 50px;
+      }
+      .banner-part p {
+        width: 100%;
+        font-size: 15px;
+      }
+    #banner-part img{
+        display: none;
+    }
+    .player-list {
+        display: block;
+      }
+     #player-body .box
+      {
+        margin-bottom: 50px;
+      }
 }
