@@ -3,10 +3,7 @@
 //     console.log(text);
 // })
 
-
-
 let players = document.getElementsByClassName('btn-player');
-
 
 for (const player of players) {
     player.addEventListener('click', function(event){
@@ -26,4 +23,34 @@ for (const player of players) {
         }
     })
 }
+
+// _______________________________________
+
+function inputValue(inptId){
+    let inptValue = document.getElementById(inptId);
+    let inptValueString = inptValue.value;
+    let inptNumber = parseFloat(inptValueString);
+
+    inptValue.value = '';
+    if(isNaN(inptNumber)){
+        alert("Enter valid number amount");
+        return inputValue;
+    }
+    else
+    {
+        return inptNumber;
+    }
+
+}
+
+
+document.getElementById('btn-calculate').addEventListener('click',function(){
+    let playerCost = inputValue('amount-inpt');
+    let list = document.querySelectorAll('#list-body li');
+    
+    let PlayerExpenses = playerCost * list.length;
+    let player_expenses = document.getElementById('player-expenses');
+    player_expenses.innerText = PlayerExpenses;
+    
+})
 
