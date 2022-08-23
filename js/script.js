@@ -26,6 +26,8 @@ for (const player of players) {
 
 // _______________________________________
 
+
+
 function inputValue(inptId){
     let inptValue = document.getElementById(inptId);
     let inptValueString = inptValue.value;
@@ -34,7 +36,7 @@ function inputValue(inptId){
     inptValue.value = '';
     if(isNaN(inptNumber)){
         alert("Enter valid number amount");
-        return inputValue;
+        return inptNumber;
     }
     else
     {
@@ -44,13 +46,33 @@ function inputValue(inptId){
 }
 
 
+
 document.getElementById('btn-calculate').addEventListener('click',function(){
+
     let playerCost = inputValue('amount-inpt');
     let list = document.querySelectorAll('#list-body li');
-    
     let PlayerExpenses = playerCost * list.length;
+
     let player_expenses = document.getElementById('player-expenses');
     player_expenses.innerText = PlayerExpenses;
     
+})
+
+
+document.getElementById('btn-total').addEventListener('click', function(){
+    
+    let player_expenses = document.getElementById('player-expenses');
+    let player_expensesString = player_expenses.innerText;
+    let player_expensesValue = parseFloat(player_expensesString);
+
+
+    let managerCost = inputValue('manager-inpt');
+    let coachCost = inputValue('coach-inpt');
+
+    let totalCost = (player_expensesValue + managerCost + coachCost);
+
+    let total = document.getElementById('total-cost');
+    total.innerText = totalCost;
+
 })
 
